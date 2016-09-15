@@ -151,7 +151,7 @@ angular.module('confusionApp', []).controller('MenuController', ['$scope',functi
     .controller('DishCommentController', ['$scope', function($scope) {
 
        //Step 1: Create a JavaScript object to hold the comment from the form
-        $scope.comment = {rating: 0, comment: "", author: ""};
+        $scope.comment = {rating: 5, comment: "", author: ""};
         $scope.invalidChannelSelection = false;
         $scope.submitComment = function () {
 
@@ -172,6 +172,7 @@ angular.module('confusionApp', []).controller('MenuController', ['$scope',functi
             //Step 5: reset your JavaScript object that holds your comment
              $scope.comment = {rating: 0, comment: "", author: ""};
              console.log($scope.comment);
+             
         }
     }])
 ;
