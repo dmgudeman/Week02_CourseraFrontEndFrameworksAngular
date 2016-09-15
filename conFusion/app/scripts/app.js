@@ -158,19 +158,19 @@ angular.module('confusionApp', []).controller('MenuController', ['$scope',functi
             //Step 2: This is how you record the date
             $scope.comment.date = new Date().toISOString();
             console.log($scope.comment);
-            console.log("dish $scope.dish");
             // Step 3: Push your comment into the dish's comment array
-            $scope.dish.comments.push($scope.comment);
-            
+            $scope.dish.comments.push({
+                rating: "$scope.comment.rating",
+                comment: "$scope.comment.comment",
+                author: "$scope.comment.author",
+                date: "$scope.comment.date"
 
+                });
+                console.log($scope.dish.comments.toString());
             //Step 4: reset your form to pristine
-            $scope.invalidChannelSelection = false;
-           
-
-            $scope.commentForm.$setPristine();
-                    
+            $scope.commentForm.$setPristine(true);
             //Step 5: reset your JavaScript object that holds your comment
-             $scope.comment = {rating: 0, comment: "", author: ""};
+             $scope.comment = {rating: 5, comment: "", author: ""};
              console.log($scope.comment);
              
         }
